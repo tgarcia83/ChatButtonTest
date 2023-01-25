@@ -17,7 +17,7 @@
 		font-family: "Arial", sans-serif;
 	}
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 3px solid #005290;
+		outline: 1px solid #005290;
 	}
 </style>
 
@@ -39,11 +39,11 @@
 		embedded_svc.settings.entryFeature = 'Flows';
 
 		embedded_svc.init(
-			'https://openedgepay--uat.sandbox.my.salesforce.com',
-			'https://openedgepay--uat.sandbox.my.site.com/successhub',
+			'https://openedgepay--gpipoc.sandbox.my.salesforce.com',
+			'https://openedgepay--gpipoc.sandbox.my.site.com/service',
 			gslbBaseURL,
-			'00D8I0000000Max',
-			'TestLeadFlow',
+			'00D8M0000008aJ1',
+			'External_Knowledge_Search_Flow',
 			{
 				
 			}
@@ -52,7 +52,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://openedgepay--uat.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://openedgepay--gpipoc.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
