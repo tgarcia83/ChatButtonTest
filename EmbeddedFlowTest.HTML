@@ -2,8 +2,16 @@
 <html>
 <head>
 <title>Page Title</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#myEmbeddedFlow").show();
+  });
+</script>
 </head>
 <body>
+    <div id="myEmbeddedFlow" style="display:none;">
+        <!-- your embedded flow code here -->
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #005290;
@@ -34,6 +42,15 @@
 		// Modified code to automatically launch the flow
 		var launchESW = function() {
 			embedded_svc.startFlow('External_lead_form');
+            embedded_svc.init(
+			'https://openedgepay--gpipoc.sandbox.my.salesforce.com',
+			'https://openedgepay--gpipoc.sandbox.my.site.com/successhub',
+			gslbBaseURL,
+			'00D8M0000008aJ1',
+			'External_lead_form',
+			{
+				
+			}
 		};
 
 		if (!window.embedded_svc) {
@@ -50,5 +67,6 @@
 		}
 	};
 </script>
+</div>
 </body>
 </html>
