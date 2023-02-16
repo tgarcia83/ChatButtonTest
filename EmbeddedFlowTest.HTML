@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $("#myEmbeddedFlow").show();
-  });
-</script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#myEmbeddedFlow").show();
+    });
+  </script>
 </head>
 <body>
-    <div id="myEmbeddedFlow" style="display:none;">
-        <!-- your embedded flow code here -->
+  <div id="myEmbeddedFlow" style="display:none;">
+    <!-- your embedded flow code here -->
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #005290;
@@ -39,10 +38,7 @@
 		embedded_svc.settings.enabledFeatures = ['Flows'];
 		embedded_svc.settings.entryFeature = 'Flows';
 
-		// Modified code to automatically launch the flow
-		var launchESW = function() {
-			embedded_svc.startFlow('External_lead_form');
-            embedded_svc.init(
+		embedded_svc.init(
 			'https://openedgepay--gpipoc.sandbox.my.salesforce.com',
 			'https://openedgepay--gpipoc.sandbox.my.site.com/successhub',
 			gslbBaseURL,
@@ -51,22 +47,20 @@
 			{
 				
 			}
-		};
-
-		if (!window.embedded_svc) {
-			var s = document.createElement('script');
-			s.setAttribute('src', 'https://openedgepay--gpipoc.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-			s.onload = function() {
-				initESW(null);
-				launchESW();
-			};
-			document.body.appendChild(s);
-		} else {
-			initESW('https://service.force.com');
-			launchESW();
-		}
+		);
 	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://openedgepay--gpipoc.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
 </script>
-</div>
+  </div>
 </body>
 </html>
